@@ -3,17 +3,23 @@
 
 import timeit
 
-def parse_file():
+def parse_file(file):
     print("Parse function")
-    
+    data = []
+    with open(file,'r') as file:
+        lines = [line.rstrip().split() for line in file]
+    for line in lines:
+        data.append([float(i) for i in line])
+    return data
 
-def Normalize():
+
+def Normalize(instance_count, feature_count, normalized_instances):
     print("Normalise data")
 
-def ForwardSelection():
+def ForwardSelection(instance_count, feature_count, normalized_instances):
     print("Forward Selection")
 
-def BackwardElimination():
+def BackwardElimination(instance_count, feature_count, normalized_instances):
     print("Backward Elimation")
 
 def main():
@@ -32,8 +38,8 @@ def main():
     start = timeit.default_timer()
     print("\t***Normalizing...***")
     normalized_instances = Normalize(instance_count, feature_count, instances)
-    print("Total number of features: {feature_count}")
-    print("Total number of Instances: {instance_count}")
+    print("Total number of features: {}", feature_count)
+    print("Total number of Instances: {}", instance_count)
 
     if (method == 1):
         ForwardSelection(instance_count, feature_count, normalized_instances)

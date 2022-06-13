@@ -149,7 +149,7 @@ def BackwardElimination(instance_count, feature_count, data):
 def main():
 
     op = int(input("Please select the file you want to test:" \
-        "\n1. Small file \n2. Large Dataset \n3. Enter the absolute path"))
+        "\n1. Small Dataset \n2. Large Dataset \n3. Select your own file\n"))
     if(op == 1):
         file = "small4.txt"
     elif(op == 2):

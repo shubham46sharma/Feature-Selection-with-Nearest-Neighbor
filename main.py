@@ -147,7 +147,16 @@ def BackwardElimination(instance_count, feature_count, data):
 
 
 def main():
-    file = input("Enter the name of the file:")
+
+    op = int(input("Please select the file you want to test:" \
+        "\n1. Small file \n2. Large Dataset \n3. Enter the absolute path"))
+    if(op == 1):
+        file = "small4.txt"
+    elif(op == 2):
+        file = "large56.txt"
+    elif(op == 3):
+        file = input("Enter the file name with correct path:")
+    print("You selected the %s file", file)
     instances = parse_file(file)
     instance_count = len(instances)
     feature_count = len(instances[0]) - 1
